@@ -1,0 +1,227 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-image:url(../image/bkg2.png);
+    background-attachment: fixed;
+} 
+/*mise en page de ma section de gauche celui des icones*/
+.gauche{
+    position: absolute;
+    top: 58%;
+    width: 500px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    color: beige;
+    padding-left: 10px;
+    position: fixed;
+}
+.gauche ul{ 
+    margin-top: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+.gauche a i{
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    border-radius: 100%;
+    padding: 15px;
+    margin: 10px;
+}
+.gauche a i:hover{
+    border-color: #fff;
+}
+/*mise ne page de ma section droite celui du grand contenue*/
+.droite{
+    width: 50%;
+    height: 100% auto; 
+    background-color: #ddd;
+    position: absolute;
+    margin-left: 50%;
+    font-family: source sans pro;
+}
+/*pour enlever les puces et les traits de soulignement dans touela section*/
+.droite .mere{
+    margin: 10px;
+    font-weight: 400;
+    text-align: center;
+}
+
+h1{
+    font-weight: lighter;
+    font-size: 40px;
+}
+/*La mise ne forme de mon type button*/
+button.accordion{
+    background: #DD1C1A;
+    color: #fff;
+    cursor: pointer;
+    border: 0px;
+    padding: 15px;
+    text-align: left;
+    width: 70%;
+    font-size: 15px;
+    transition: .4s;
+}
+/*le focus none pour enlever l'effet focus les traits bleue qui se présente la*/
+button:focus {
+    outline: none;
+}
+button.accordion:after{
+    content: "\2191";/*Uni code qui permet de mettre le plus (+)*/
+    font-size:15px;
+    color: #fff;
+    float: right;
+}
+
+/*le active pour que quqnd on va cliquer sur un button pour ouvrir que la couleur du hover reste*/
+button.accordion.active:after{
+    content: "\2193";/*Uni code qui permet de mettre le moin (+)*/
+}
+button.accordion.active, button.accordion:hover{
+    background: #9B0A07;
+}
+/*pour cacher mon contenus dans les contenaires*/
+div.panel {
+    padding: 0 15px;
+    color: #000;
+    max-height: 0;
+    overflow: hidden;
+    width: 65.45%;
+    margin: 0 auto;
+    transition: max-height .2s ease-out;
+}
+
+.droite .images{
+    margin: 15px;
+}
+
+.droite .images img{
+    border-radius :15px;
+    margin: 10px;
+    z-index: 10;
+    filter: brightness(0.8);
+}
+
+.droite .images img:hover{
+    filter: brightness(1);
+}
+
+.droite .images .text2 a{
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    font-family: Times;
+    font-size: 18px;
+    bottom: 50px;
+    margin: 50px;
+    /*padding-left: 26px;*/
+    color: rgba(255,0,0,0.9);
+    background-color: #000;
+    z-index: 4;
+}
+/*le texte du 4e image*/
+#l2{
+    position: relative;
+    left: 150px;
+}
+/*La mise en forme du formulaire*/
+#formulaire {
+    padding: 10px 0;
+}
+#formulaire label{
+    float: left;
+    margin-left: 50px;
+}
+#formulaire form input[type="text"], #formulaire form input[type="email"]{
+    border: 0px;
+    background: none;
+    padding: 15px 20px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: #000;
+}
+/*.formulaire form input[type="text"].active, .formulaire form input[type="email"].active:focus{
+}*/
+#formulaire form input[type="submit"]{
+    border: 0px;
+    background: none;
+    padding: 10px;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: rgba(10,1,200,0.5);
+}
+.footer{
+    width: 100% auto;
+    height: 50px;
+    background-color: #fef;
+    padding: 1px 29%;
+}
+@media screen and (max-width: 700px) {
+    body {
+        margin: 0px;
+        padding: 0px;
+        background-image: none;
+        background-color: #ddd;
+        width: 100%;
+        height: 100%;
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .gauche{
+        width: 60% auto;
+        height: 250px;
+        position: relative;
+        left: 8px;
+        color: #000;
+    }
+    .gauche a i{
+    position: relative;
+    right: 60px;
+    color:rgba(0,0,255,0.9);
+    border: 2px solid rgba(1, 0, 205, 0.55);
+}
+    .gauche a i:hover{
+    border-color: #000;
+}
+    .droite{
+        width:100%;
+        height: 30%;
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        margin-left: 20px;
+    }
+    .droite .images{
+        display: none;
+    }
+    .footer{
+   display: none;
+}
+}
+
+/*@media screen and (min-width: 700px), (max-width: 1000px){
+    .gauche h1{
+        font-family:'Arial Narrow', Arial, sans-serif;
+        font-weight: 400;
+        font-size: 25px;
+    }
+    .droite{
+        padding-top: 150px auto;
+        height: 100%;
+    }
+    .images{
+        display: none;
+    }
+    .footer{
+        position: relative;
+        top: 150px;
+    }
+}*/
